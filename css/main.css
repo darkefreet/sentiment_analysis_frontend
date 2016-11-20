@@ -1,0 +1,16 @@
+.pad{
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
+.menu{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	height: 496px;
+  	overflow:scroll;
+}
+
+.menuItem{
+	align-self: center;
+}
