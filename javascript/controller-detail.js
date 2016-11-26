@@ -73,7 +73,7 @@ angular.module('myModule', []).controller('myController', function ($scope,$http
 	    		var a = JSON.parse(result[resp]);
 	    		if(a!=false){
 	    			a.color=getRandomColor();
-		    		a.data[0] = 50*Number(a.data[0]);
+		    		a.data[0] = Number(a.data[0]);
 		    		a.data[1] = Number(a.data[1]);
 		    		var arr = [];
 		    		arr.push(a.data);
