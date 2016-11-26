@@ -1,6 +1,14 @@
 angular.module('myModule', []).controller('myController', function ($scope,$http) {
 	var self = this;
 
+	var getRandomColor = function() {
+	    var letters = '0123456789ABCDEF';
+	    var color = '#';
+	    for (var i = 0; i < 6; i++ ) {
+	        color += letters[Math.floor(Math.random() * 16)];
+	    }
+	    return color;
+	}
 	this.color = ['#ff6c0a','#0aff12','#f6ff0a','#ffaa00','#ffdd88','#000000','#abfc88','#1fc445','#10e5b0','#126e7a','#a504e0','#e0044a'];
 	this.colorIndex = 0;
 
@@ -74,8 +82,9 @@ angular.module('myModule', []).controller('myController', function ($scope,$http
 	this.init = function(){
 		this.attributes = attributes;
 		for(var i =0; i<attributes.length;i++){
-			attributes[i].color=this.color[this.colorIndex];
-			this.colorIndex = (this.colorIndex + 1) % this.color.length;
+			// attributes[i].color=this.color[this.colorIndex];
+			// this.colorIndex = (this.colorIndex + 1) % this.color.length;
+			attributes[i].color = getRandomColor();
 		}
 		$http({
 	        method : "GET",
